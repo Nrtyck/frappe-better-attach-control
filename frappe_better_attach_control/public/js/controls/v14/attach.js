@@ -32,7 +32,6 @@ import {
     to_images_list
 } from './../../filetypes';
 
-
 frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.ControlAttach {
     make() {
         super.make();
@@ -114,9 +113,9 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
     }
     
     async on_upload_complete(attachment) {
-		if (this.frm) {
-			await this.parse_validate_and_set_in_model(attachment.file_url);
-			this.frm.attachments.update_attachment(attachment);
+        if (this.frm) {
+            await this.parse_validate_and_set_in_model(attachment.file_url);
+            this.frm.attachments.update_attachment(attachment);
             if (this._allow_multiple){
                 let up = this.file_uploader.uploader;
                 if(up){
@@ -127,9 +126,9 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
             }else{
                 this.frm.doc.docstatus == 1 ? this.frm.save("Update") : this.frm.save();
             }
-		}
-		this.set_value(attachment.file_url);
-	}
+        }
+        this.set_value(attachment.file_url);
+    }
     set_value(value, force_set_value=false) {
         return super.set_value(this._set_value(value), force_set_value);
     }
@@ -641,3 +640,18 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
         }
     }
 };
+
+// var hook_attach_control_timer_id =-1
+
+// var check_hook_attach_control =function (){
+//     console.log(121231233);
+//     if(frappe.ui.form.ControlAttach && !frappe.ui.form.ControlAttach.prototype._parse_options){
+
+        
+//     }else if(hook_attach_control_timer_id!=-1){
+//         clearInterval(hook_attach_control_timer_id);     //
+//     }
+// }
+
+
+// hook_attach_control_timer_id = setInterval(check_hook_attach_control,0);
