@@ -5,7 +5,6 @@
 *  Licence: Please refer to LICENSE file
 */
 
-
 frappe.ui.form.ControlAttachImage = class ControlAttachImage extends frappe.ui.form.ControlAttach {
     _parse_options() {
         this._images_only = true;
