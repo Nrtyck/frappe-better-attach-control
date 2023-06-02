@@ -34,6 +34,7 @@ import {
 
 frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.ControlAttach {
     make() {
+        //console.log((111111111121111));
         super.make();
         this._parse_options(); 
     }
